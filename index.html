@@ -3,11 +3,13 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Thillai Data Tech</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap" rel="stylesheet">
 
 <style>
+
 *{
     margin:0;
     padding:0;
@@ -17,20 +19,41 @@
 }
 
 body{
-    background:linear-gradient(-45deg,#6a11cb,#2575fc,#00c9a7,#ff4b91,#ff9800);
+    background:linear-gradient(
+        -45deg,
+        #6a11cb,
+        #2575fc,
+        #00c9a7,
+        #ff4b91,
+        #ff9800
+    );
+
     background-size:400% 400%;
     animation:bgMove 12s ease infinite;
+
     color:white;
     overflow-x:hidden;
 }
 
 @keyframes bgMove{
-    0%{background-position:0% 50%;}
-    50%{background-position:100% 50%;}
-    100%{background-position:0% 50%;}
+    0%{
+        background-position:0% 50%;
+    }
+
+    50%{
+        background-position:100% 50%;
+    }
+
+    100%{
+        background-position:0% 50%;
+    }
 }
 
-/* Floating bubbles */
+
+/* =========================
+   FLOATING BUBBLES
+========================= */
+
 .bubble{
     position:absolute;
     border-radius:50%;
@@ -39,333 +62,1022 @@ body{
 }
 
 @keyframes float{
-    from{transform:translateY(100vh) scale(.3);}
-    to{transform:translateY(-120vh) scale(1);}
+
+    from{
+        transform:translateY(100vh) scale(.3);
+    }
+
+    to{
+        transform:translateY(-120vh) scale(1);
+    }
+
 }
 
-/* Header */
+
+/* =========================
+   HEADER
+========================= */
+
 header{
+
     position:sticky;
     top:0;
+
     display:flex;
     justify-content:space-between;
     align-items:center;
-    padding:20px 8%;
-    background:rgba(255,255,255,.08);
+
+    padding:12px 8%;
+
+    background:rgba(255,255,255,.10);
+
     backdrop-filter:blur(15px);
+
     z-index:1000;
+
+}
+
+
+/* Logo */
+
+.logo-wrap{
+
+    display:flex;
+    align-items:center;
+    gap:12px;
+
+}
+
+.logo-img{
+
+    width:60px;
+    height:60px;
+
+    object-fit:contain;
+
+    background:white;
+
+    border-radius:12px;
+
+    padding:4px;
+
 }
 
 .logo h2{
-    font-size:30px;
+
+    font-size:25px;
+
     font-weight:800;
-    background:linear-gradient(to right,#fff,#ffe600,#00ffd5);
+
+    background:
+    linear-gradient(
+        to right,
+        #fff,
+        #ffe600,
+        #00ffd5
+    );
+
     -webkit-background-clip:text;
+
     -webkit-text-fill-color:transparent;
+
 }
 
+
+/* Navigation */
+
 nav a{
+
     color:white;
+
     text-decoration:none;
+
     margin-left:20px;
+
     font-weight:600;
+
     transition:.3s;
+
 }
 
 nav a:hover{
+
     color:#ffe600;
+
 }
 
-/* Hero */
+
+/* =========================
+   HERO
+========================= */
+
 .hero{
+
     min-height:90vh;
+
     display:flex;
+
     justify-content:center;
+
     align-items:center;
+
     text-align:center;
-    padding:40px 8%;
+
+    padding:50px 8%;
+
+}
+
+.hero-content{
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    gap:55px;
+
+    max-width:1150px;
+
+    width:100%;
+
+    flex-wrap:wrap;
+
 }
 
 .hero-text{
-    max-width:800px;
+
+    max-width:720px;
+
 }
 
 .hero h1{
+
     font-size:58px;
+
     font-weight:800;
+
     line-height:1.2;
+
 }
 
 .hero span{
+
     color:#ffe600;
-    text-shadow:0 0 15px yellow;
+
+    text-shadow:
+    0 0 15px yellow;
+
 }
 
 .hero p{
+
     margin:20px 0 30px;
+
     font-size:20px;
+
     color:#f5f5f5;
+
 }
 
-/* Buttons */
-.btn{
-    display:inline-block;
-    padding:15px 30px;
-    margin:10px;
-    border-radius:50px;
-    text-decoration:none;
+
+/* =========================
+   FOUNDER PHOTO
+========================= */
+
+.founder-box{
+
+    width:300px;
+
+    text-align:center;
+
+}
+
+.founder-photo{
+
+    width:280px;
+
+    height:350px;
+
+    object-fit:cover;
+
+    border-radius:28px;
+
+    border:4px solid rgba(255,255,255,.8);
+
+    box-shadow:
+    0 20px 50px rgba(0,0,0,.45);
+
+    transition:.4s;
+
+}
+
+.founder-photo:hover{
+
+    transform:
+    scale(1.04)
+    rotate(1deg);
+
+}
+
+.founder-name{
+
+    margin-top:15px;
+
+    font-size:21px;
+
     font-weight:700;
+
+}
+
+.founder-role{
+
+    font-size:14px;
+
+    opacity:.9;
+
+}
+
+
+/* =========================
+   BUTTONS
+========================= */
+
+.btn{
+
+    display:inline-block;
+
+    padding:15px 30px;
+
+    margin:10px;
+
+    border-radius:50px;
+
+    text-decoration:none;
+
+    font-weight:700;
+
     transition:.3s;
-    box-shadow:0 8px 20px rgba(0,0,0,.3);
+
+    box-shadow:
+    0 8px 20px rgba(0,0,0,.3);
+
     border:none;
+
     cursor:pointer;
+
 }
 
 .book{
+
     background:#ffe600;
+
     color:black;
+
 }
 
 .call{
+
     background:#00ff99;
+
     color:black;
+
 }
 
 .fees{
-    background:linear-gradient(45deg,#ff1744,#ff9800);
+
+    background:
+    linear-gradient(
+        45deg,
+        #ff1744,
+        #ff9800
+    );
+
     color:white;
+
 }
 
 .btn:hover{
+
     transform:scale(1.08);
+
 }
 
-/* Section */
+
+/* =========================
+   SECTIONS
+========================= */
+
 section{
+
     padding:70px 8%;
+
 }
 
 .title{
+
     text-align:center;
+
     font-size:40px;
+
     margin-bottom:35px;
+
 }
 
+
+/* =========================
+   CARDS
+========================= */
+
 .cards{
+
     display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+
+    grid-template-columns:
+    repeat(
+        auto-fit,
+        minmax(250px,1fr)
+    );
+
     gap:25px;
+
 }
 
 .card{
-    background:rgba(255,255,255,.12);
+
+    background:
+    rgba(255,255,255,.12);
+
     backdrop-filter:blur(12px);
+
     border-radius:20px;
+
     padding:25px;
+
     text-align:center;
+
     transition:.3s;
-    border:1px solid rgba(255,255,255,.2);
+
+    border:
+    1px solid
+    rgba(255,255,255,.2);
+
 }
 
 .card:hover{
+
     transform:translateY(-10px);
-    background:rgba(255,255,255,.18);
+
+    background:
+    rgba(255,255,255,.18);
+
 }
 
 .icon{
+
     font-size:45px;
+
 }
 
 .card h3{
+
     color:#ffe600;
+
     margin:15px 0;
+
 }
 
-/* Contact */
+
+/* =========================
+   CONTACT
+========================= */
+
 .contact{
-    background:rgba(255,255,255,.12);
+
+    background:
+    rgba(255,255,255,.12);
+
     backdrop-filter:blur(12px);
+
     padding:35px;
+
     border-radius:20px;
+
     text-align:center;
+
 }
 
 .contact p{
+
     margin:12px 0;
+
     font-size:18px;
+
 }
+
+
+/* =========================
+   FOOTER
+========================= */
 
 footer{
+
     text-align:center;
+
     padding:25px;
-    background:rgba(0,0,0,.2);
+
+    background:
+    rgba(0,0,0,.2);
+
     margin-top:30px;
+
 }
 
+
+/* =========================
+   MOBILE
+========================= */
+
 @media(max-width:768px){
+
     nav{
+
         display:none;
+
+    }
+
+    .hero{
+
+        padding-top:45px;
+
     }
 
     .hero h1{
+
         font-size:38px;
+
     }
 
     .hero p{
+
         font-size:17px;
+
+    }
+
+    .hero-content{
+
+        gap:30px;
+
+    }
+
+    .founder-photo{
+
+        width:220px;
+
+        height:275px;
+
     }
 
     .btn{
+
         display:block;
+
         width:90%;
+
         margin:12px auto;
+
     }
+
+    .logo-img{
+
+        width:48px;
+
+        height:48px;
+
+    }
+
+    .logo h2{
+
+        font-size:20px;
+
+    }
+
 }
+
 </style>
+
 </head>
+
 
 <body>
 
-<!-- Floating Bubbles -->
-<div class="bubble" style="left:10%;width:70px;height:70px;animation-duration:13s;"></div>
-<div class="bubble" style="left:80%;width:120px;height:120px;animation-duration:17s;"></div>
-<div class="bubble" style="left:45%;width:90px;height:90px;animation-duration:20s;"></div>
 
-<!-- Header -->
+<!-- =========================
+     FLOATING BUBBLES
+========================= -->
+
+<div
+class="bubble"
+style="
+left:10%;
+width:70px;
+height:70px;
+animation-duration:13s;
+">
+</div>
+
+<div
+class="bubble"
+style="
+left:80%;
+width:120px;
+height:120px;
+animation-duration:17s;
+">
+</div>
+
+<div
+class="bubble"
+style="
+left:45%;
+width:90px;
+height:90px;
+animation-duration:20s;
+">
+</div>
+
+
+<!-- =========================
+     HEADER
+========================= -->
+
 <header>
-    <div class="logo">
-        <h2>✨ Thillai Data Tech</h2>
+
+    <div class="logo-wrap">
+
+        <!-- YOUR LOGO -->
+        <img
+        class="logo-img"
+        src="logo.png"
+        alt="Thillai Data Tech Logo">
+
+        <div class="logo">
+
+            <h2>
+                Thillai Data Tech
+            </h2>
+
+        </div>
+
     </div>
+
 
     <nav>
-        <a href="#services">Services</a>
-        <a href="#about">About</a>
-        <a href="#contact">Contact</a>
+
+        <a href="#services">
+            Services
+        </a>
+
+        <a href="#about">
+            About
+        </a>
+
+        <a href="#contact">
+            Contact
+        </a>
+
     </nav>
+
 </header>
 
-<!-- Hero Section -->
+
+<!-- =========================
+     HERO
+========================= -->
+
 <section class="hero">
-    <div class="hero-text">
 
-        <h1>Grow Your Business with <span>Thillai Data Tech</span></h1>
+    <div class="hero-content">
 
-        <p>
-            Professional Data Analytics • Website Development • Mobile Apps • AI Projects • Graphic Design • Digital Solutions
-        </p>
 
-        <a href="#contact" class="btn book">📅 Book Service</a>
+        <div class="hero-text">
 
-        <a href="tel:+918903763714" class="btn call">📞 Call Now</a>
+            <h1>
 
-        <!-- Services Button (No Action) -->
-        <a href="https://maadheshb.github.io/services-amount/" class="btn fees">💰 Services</a>
+                Grow Your Business with
+
+                <span>
+                    Thillai Data Tech
+                </span>
+
+            </h1>
+
+
+            <p>
+
+                Professional Data Analytics •
+                Website Development •
+                Mobile Apps •
+                AI Projects •
+                Graphic Design •
+                Digital Solutions
+
+            </p>
+
+
+            <a
+            href="#contact"
+            class="btn book">
+
+                📅 Book Service
+
+            </a>
+
+
+            <a
+            href="tel:+918903763714"
+            class="btn call">
+
+                📞 Call Now
+
+            </a>
+
+
+            <a
+            href="https://maadheshb.github.io/services-amount/"
+            class="btn fees">
+
+                💰 Services
+
+            </a>
+
+        </div>
+
+
+        <!-- =========================
+             FOUNDER
+        ========================= -->
+
+        <div class="founder-box">
+
+            <img
+            class="founder-photo"
+            src="founder.png"
+            alt="Founder">
+
+            <div class="founder-name">
+
+                Founder
+
+            </div>
+
+            <div class="founder-role">
+
+                Thillai Data Tech
+
+            </div>
+
+        </div>
+
 
     </div>
+
 </section>
 
-<!-- Services -->
+
+
+<!-- =========================
+     SERVICES
+========================= -->
+
 <section id="services">
 
-    <h2 class="title">✨ Our Premium Services</h2>
+    <h2 class="title">
+
+        ✨ Our Premium Services
+
+    </h2>
+
 
     <div class="cards">
 
-        <div class="card">
-            <div class="icon">📊</div>
-            <h3>Data Analytics</h3>
-            <p>Power BI, Excel, SQL, Python, Tableau Dashboards and Business Reports.</p>
-        </div>
 
         <div class="card">
-            <div class="icon">💻</div>
-            <h3>Website Development</h3>
-            <p>Business, Portfolio, Restaurant and E-Commerce Websites.</p>
+
+            <div class="icon">
+                📊
+            </div>
+
+            <h3>
+                Data Analytics
+            </h3>
+
+            <p>
+
+                Power BI, Excel, SQL,
+                Python, Tableau Dashboards
+                and Business Reports.
+
+            </p>
+
         </div>
 
-        <div class="card">
-            <div class="icon">📱</div>
-            <h3>Mobile App Development</h3>
-            <p>Android Apps using Java, Kotlin and Firebase.</p>
-        </div>
+
 
         <div class="card">
-            <div class="icon">🤖</div>
-            <h3>AI & Machine Learning</h3>
-            <p>AI Dashboards, Chatbots, Automation and College Projects.</p>
+
+            <div class="icon">
+                💻
+            </div>
+
+            <h3>
+                Website Development
+            </h3>
+
+            <p>
+
+                Business, Portfolio,
+                Restaurant and
+                E-Commerce Websites.
+
+            </p>
+
         </div>
 
-        <div class="card">
-            <div class="icon">🎨</div>
-            <h3>Graphic Design</h3>
-            <p>Logo, Posters, Flyers, Banners and Instagram Branding.</p>
-        </div>
+
 
         <div class="card">
-            <div class="icon">☁️</div>
-            <h3>Cloud & Database</h3>
-            <p>Firebase, MySQL, MongoDB and Cloud Hosting.</p>
+
+            <div class="icon">
+                📱
+            </div>
+
+            <h3>
+                Mobile App Development
+            </h3>
+
+            <p>
+
+                Android Apps using
+                Java, Kotlin and Firebase.
+
+            </p>
+
         </div>
+
+
+
+        <div class="card">
+
+            <div class="icon">
+                🤖
+            </div>
+
+            <h3>
+                AI & Machine Learning
+            </h3>
+
+            <p>
+
+                AI Dashboards,
+                Chatbots, Automation
+                and College Projects.
+
+            </p>
+
+        </div>
+
+
+
+        <div class="card">
+
+            <div class="icon">
+                🎨
+            </div>
+
+            <h3>
+                Graphic Design
+            </h3>
+
+            <p>
+
+                Logo, Posters, Flyers,
+                Banners and Instagram
+                Branding.
+
+            </p>
+
+        </div>
+
+
+
+        <div class="card">
+
+            <div class="icon">
+                ☁️
+            </div>
+
+            <h3>
+                Cloud & Database
+            </h3>
+
+            <p>
+
+                Firebase, MySQL,
+                MongoDB and Cloud Hosting.
+
+            </p>
+
+        </div>
+
 
     </div>
 
 </section>
 
-<!-- About -->
+
+
+<!-- =========================
+     ABOUT
+========================= -->
+
 <section id="about">
 
-    <h2 class="title">🚀 Why Choose Thillai Data Tech?</h2>
+    <h2 class="title">
+
+        🚀 Why Choose
+        Thillai Data Tech?
+
+    </h2>
+
 
     <div class="cards">
 
-        <div class="card">
-            <div class="icon">🎯</div>
-            <h3>Modern Design</h3>
-            <p>Creative UI/UX with colorful animations and responsive layouts.</p>
-        </div>
 
         <div class="card">
-            <div class="icon">⚡</div>
-            <h3>Fast Delivery</h3>
-            <p>Quality work delivered on time for students, startups and businesses.</p>
+
+            <div class="icon">
+                🎯
+            </div>
+
+            <h3>
+                Modern Design
+            </h3>
+
+            <p>
+
+                Creative UI/UX with
+                colorful animations
+                and responsive layouts.
+
+            </p>
+
         </div>
 
+
+
         <div class="card">
-            <div class="icon">💎</div>
-            <h3>Affordable Pricing</h3>
-            <p>Professional digital solutions at budget-friendly prices.</p>
+
+            <div class="icon">
+                ⚡
+            </div>
+
+            <h3>
+                Fast Delivery
+            </h3>
+
+            <p>
+
+                Quality work delivered
+                on time for students,
+                startups and businesses.
+
+            </p>
+
         </div>
+
+
+
+        <div class="card">
+
+            <div class="icon">
+                💎
+            </div>
+
+            <h3>
+                Affordable Pricing
+            </h3>
+
+            <p>
+
+                Professional digital
+                solutions at
+                budget-friendly prices.
+
+            </p>
+
+        </div>
+
 
     </div>
 
 </section>
 
-<!-- Contact -->
+
+
+<!-- =========================
+     CONTACT
+========================= -->
+
 <section id="contact">
 
     <div class="contact">
 
-        <h2 class="title">📞 Contact Thillai Data Tech</h2>
 
-        <p><strong>📱 Phone:</strong> +91 8903763714</p>
+        <h2 class="title">
 
-        <p><strong>📷 Instagram:</strong> @thillai_data_tech</p>
+            📞 Contact
+            Thillai Data Tech
 
-        <p><strong>📧 Email:</strong> thillaidatatech@gmail.com</p>
+        </h2>
 
-        <a href="https://wa.me/918903763714" class="btn book">💬 WhatsApp Booking</a>
 
-        <a href="https://instagram.com/thillai_data_tech" class="btn fees">📷 Instagram</a>
+        <p>
+
+            <strong>
+                📱 Phone:
+            </strong>
+
+            +91 8903763714
+
+        </p>
+
+
+        <p>
+
+            <strong>
+                📷 Instagram:
+            </strong>
+
+            @thillai_data_tech
+
+        </p>
+
+
+        <p>
+
+            <strong>
+                📧 Email:
+            </strong>
+
+            thillaidatatech@gmail.com
+
+        </p>
+
+
+
+        <a
+        href="https://wa.me/918903763714"
+        class="btn book">
+
+            💬 WhatsApp Booking
+
+        </a>
+
+
+        <a
+        href="https://instagram.com/thillai_data_tech"
+        class="btn fees">
+
+            📷 Instagram
+
+        </a>
+
 
     </div>
 
 </section>
 
-<!-- Footer -->
+
+
+<!-- =========================
+     FOOTER
+========================= -->
+
 <footer>
-    ❤️ Designed by <strong>Thillai Data Tech</strong><br>
+
+    ❤️ Designed by
+    <strong>
+        Thillai Data Tech
+    </strong>
+
+    <br>
+
     Data • Design • Development • AI
+
 </footer>
 
+
 </body>
+
 </html>
