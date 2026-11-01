@@ -1,1083 +1,907 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Thillai Data Tech</title>
-
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+<title>TDT ONE | Thillai Data Tech</title>
+<link rel="icon" href="tdt-logo.png">
 
 <style>
-
 *{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    font-family:'Poppins',sans-serif;
-    scroll-behavior:smooth;
+margin:0;
+padding:0;
+box-sizing:border-box;
+scroll-behavior:smooth;
+}
+
+:root{
+--green:#16a36a;
+--purple:#7139c5;
+--dark:#182334;
+--light:#f7f8fc;
 }
 
 body{
-    background:linear-gradient(
-        -45deg,
-        #6a11cb,
-        #2575fc,
-        #00c9a7,
-        #ff4b91,
-        #ff9800
-    );
-
-    background-size:400% 400%;
-    animation:bgMove 12s ease infinite;
-
-    color:white;
-    overflow-x:hidden;
+font-family:Arial,sans-serif;
+background:var(--light);
+color:var(--dark);
 }
-
-@keyframes bgMove{
-    0%{
-        background-position:0% 50%;
-    }
-
-    50%{
-        background-position:100% 50%;
-    }
-
-    100%{
-        background-position:0% 50%;
-    }
-}
-
-
-/* =========================
-   FLOATING BUBBLES
-========================= */
-
-.bubble{
-    position:absolute;
-    border-radius:50%;
-    background:rgba(255,255,255,.15);
-    animation:float 15s linear infinite;
-}
-
-@keyframes float{
-
-    from{
-        transform:translateY(100vh) scale(.3);
-    }
-
-    to{
-        transform:translateY(-120vh) scale(1);
-    }
-
-}
-
-
-/* =========================
-   HEADER
-========================= */
 
 header{
-
-    position:sticky;
-    top:0;
-
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-
-    padding:12px 8%;
-
-    background:rgba(255,255,255,.10);
-
-    backdrop-filter:blur(15px);
-
-    z-index:1000;
-
+background:white;
+padding:15px 5%;
+display:flex;
+justify-content:space-between;
+align-items:center;
+position:sticky;
+top:0;
+z-index:1000;
+box-shadow:0 2px 12px #0001;
+flex-wrap:wrap;
+gap:12px;
 }
 
-
-/* Logo */
-
-.logo-wrap{
-
-    display:flex;
-    align-items:center;
-    gap:12px;
-
+.logo{
+display:flex;
+align-items:center;
+gap:10px;
+font-size:23px;
+font-weight:bold;
 }
 
-.logo-img{
-
-    width:60px;
-    height:60px;
-
-    object-fit:contain;
-
-    background:white;
-
-    border-radius:12px;
-
-    padding:4px;
-
+.logo img{
+width:45px;
+height:45px;
+object-fit:contain;
 }
 
-.logo h2{
-
-    font-size:25px;
-
-    font-weight:800;
-
-    background:
-    linear-gradient(
-        to right,
-        #fff,
-        #ffe600,
-        #00ffd5
-    );
-
-    -webkit-background-clip:text;
-
-    -webkit-text-fill-color:transparent;
-
+.logo span{
+color:var(--purple);
 }
 
-
-/* Navigation */
+nav{
+display:flex;
+gap:16px;
+flex-wrap:wrap;
+}
 
 nav a{
-
-    color:white;
-
-    text-decoration:none;
-
-    margin-left:20px;
-
-    font-weight:600;
-
-    transition:.3s;
-
+text-decoration:none;
+color:#333;
+font-size:13px;
+font-weight:bold;
 }
 
 nav a:hover{
-
-    color:#ffe600;
-
+color:var(--green);
 }
-
-
-/* =========================
-   HERO
-========================= */
 
 .hero{
-
-    min-height:90vh;
-
-    display:flex;
-
-    justify-content:center;
-
-    align-items:center;
-
-    text-align:center;
-
-    padding:50px 8%;
-
-}
-
-.hero-content{
-
-    display:flex;
-
-    align-items:center;
-
-    justify-content:center;
-
-    gap:55px;
-
-    max-width:1150px;
-
-    width:100%;
-
-    flex-wrap:wrap;
-
-}
-
-.hero-text{
-
-    max-width:720px;
-
+padding:100px 8%;
+color:white;
+text-align:center;
+background:linear-gradient(120deg,#128d60,#6334b4);
 }
 
 .hero h1{
-
-    font-size:58px;
-
-    font-weight:800;
-
-    line-height:1.2;
-
-}
-
-.hero span{
-
-    color:#ffe600;
-
-    text-shadow:
-    0 0 15px yellow;
-
+font-size:48px;
+margin-bottom:18px;
 }
 
 .hero p{
-
-    margin:20px 0 30px;
-
-    font-size:20px;
-
-    color:#f5f5f5;
-
+font-size:17px;
+line-height:1.8;
 }
-
-
-/* =========================
-   FOUNDER PHOTO
-========================= */
-
-.founder-box{
-
-    width:300px;
-
-    text-align:center;
-
-}
-
-.founder-photo{
-
-    width:280px;
-
-    height:350px;
-
-    object-fit:cover;
-
-    border-radius:28px;
-
-    border:4px solid rgba(255,255,255,.8);
-
-    box-shadow:
-    0 20px 50px rgba(0,0,0,.45);
-
-    transition:.4s;
-
-}
-
-.founder-photo:hover{
-
-    transform:
-    scale(1.04)
-    rotate(1deg);
-
-}
-
-.founder-name{
-
-    margin-top:15px;
-
-    font-size:21px;
-
-    font-weight:700;
-
-}
-
-.founder-role{
-
-    font-size:14px;
-
-    opacity:.9;
-
-}
-
-
-/* =========================
-   BUTTONS
-========================= */
 
 .btn{
-
-    display:inline-block;
-
-    padding:15px 30px;
-
-    margin:10px;
-
-    border-radius:50px;
-
-    text-decoration:none;
-
-    font-weight:700;
-
-    transition:.3s;
-
-    box-shadow:
-    0 8px 20px rgba(0,0,0,.3);
-
-    border:none;
-
-    cursor:pointer;
-
+display:inline-block;
+padding:13px 24px;
+margin:15px 5px;
+background:white;
+color:var(--purple);
+border-radius:8px;
+text-decoration:none;
+font-weight:bold;
+border:none;
+cursor:pointer;
 }
 
-.book{
-
-    background:#ffe600;
-
-    color:black;
-
+.btn.green{
+background:var(--green);
+color:white;
 }
-
-.call{
-
-    background:#00ff99;
-
-    color:black;
-
-}
-
-.fees{
-
-    background:
-    linear-gradient(
-        45deg,
-        #ff1744,
-        #ff9800
-    );
-
-    color:white;
-
-}
-
-.btn:hover{
-
-    transform:scale(1.08);
-
-}
-
-
-/* =========================
-   SECTIONS
-========================= */
 
 section{
-
-    padding:70px 8%;
-
+padding:65px 7%;
 }
 
-.title{
-
-    text-align:center;
-
-    font-size:40px;
-
-    margin-bottom:35px;
-
+.heading{
+text-align:center;
+font-size:32px;
+margin-bottom:35px;
 }
 
+.heading span{
+color:var(--purple);
+}
 
-/* =========================
-   CARDS
-========================= */
+.about{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:35px;
+align-items:center;
+}
+
+.founder-img{
+width:100%;
+max-width:350px;
+height:350px;
+object-fit:cover;
+border-radius:20px;
+background:#e5e5e5;
+}
+
+.about p{
+line-height:1.8;
+margin-top:12px;
+color:#555;
+}
 
 .cards{
-
-    display:grid;
-
-    grid-template-columns:
-    repeat(
-        auto-fit,
-        minmax(250px,1fr)
-    );
-
-    gap:25px;
-
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:22px;
 }
 
 .card{
-
-    background:
-    rgba(255,255,255,.12);
-
-    backdrop-filter:blur(12px);
-
-    border-radius:20px;
-
-    padding:25px;
-
-    text-align:center;
-
-    transition:.3s;
-
-    border:
-    1px solid
-    rgba(255,255,255,.2);
-
+background:white;
+padding:25px;
+border-radius:15px;
+box-shadow:0 5px 20px #0000000b;
+border:1px solid #eee;
+transition:.3s;
 }
 
 .card:hover{
-
-    transform:translateY(-10px);
-
-    background:
-    rgba(255,255,255,.18);
-
-}
-
-.icon{
-
-    font-size:45px;
-
+transform:translateY(-5px);
+border-color:var(--green);
 }
 
 .card h3{
-
-    color:#ffe600;
-
-    margin:15px 0;
-
+color:var(--purple);
+margin-bottom:12px;
 }
 
+.card p{
+color:#666;
+line-height:1.7;
+font-size:14px;
+}
 
-/* =========================
-   CONTACT
-========================= */
+.price{
+font-size:23px;
+font-weight:bold;
+color:var(--green);
+margin:15px 0;
+}
+
+.tag{
+display:inline-block;
+background:#e6f7ed;
+color:#168653;
+padding:6px 12px;
+border-radius:20px;
+font-size:12px;
+margin:10px 0;
+}
+
+.card button{
+background:var(--purple);
+color:white;
+border:0;
+padding:10px 16px;
+border-radius:7px;
+margin-top:15px;
+cursor:pointer;
+}
+
+.hub-card{
+text-align:center;
+}
+
+.app-icon{
+width:70px;
+height:70px;
+border-radius:17px;
+background:linear-gradient(135deg,var(--green),var(--purple));
+color:white;
+display:grid;
+place-items:center;
+font-size:27px;
+font-weight:bold;
+margin:0 auto 15px;
+}
+
+.app-icon img{
+width:100%;
+height:100%;
+object-fit:cover;
+border-radius:17px;
+}
 
 .contact{
-
-    background:
-    rgba(255,255,255,.12);
-
-    backdrop-filter:blur(12px);
-
-    padding:35px;
-
-    border-radius:20px;
-
-    text-align:center;
-
+background:#eeeaf8;
 }
 
-.contact p{
-
-    margin:12px 0;
-
-    font-size:18px;
-
+.contact-info{
+text-align:center;
+margin-bottom:30px;
 }
 
-
-/* =========================
-   FOOTER
-========================= */
+.contact-info p{
+color:#555;
+line-height:1.8;
+}
 
 footer{
-
-    text-align:center;
-
-    padding:25px;
-
-    background:
-    rgba(0,0,0,.2);
-
-    margin-top:30px;
-
+background:#172334;
+color:white;
+padding:40px 7%;
+text-align:center;
+line-height:2;
 }
 
-
-/* =========================
-   MOBILE
-========================= */
-
-@media(max-width:768px){
-
-    nav{
-
-        display:none;
-
-    }
-
-    .hero{
-
-        padding-top:45px;
-
-    }
-
-    .hero h1{
-
-        font-size:38px;
-
-    }
-
-    .hero p{
-
-        font-size:17px;
-
-    }
-
-    .hero-content{
-
-        gap:30px;
-
-    }
-
-    .founder-photo{
-
-        width:220px;
-
-        height:275px;
-
-    }
-
-    .btn{
-
-        display:block;
-
-        width:90%;
-
-        margin:12px auto;
-
-    }
-
-    .logo-img{
-
-        width:48px;
-
-        height:48px;
-
-    }
-
-    .logo h2{
-
-        font-size:20px;
-
-    }
-
+footer .logo{
+justify-content:center;
+margin-bottom:12px;
 }
 
+footer a{
+color:#8de0b5;
+text-decoration:none;
+}
+
+@media(max-width:750px){
+
+header{
+justify-content:center;
+}
+
+nav{
+justify-content:center;
+gap:12px;
+}
+
+.hero h1{
+font-size:34px;
+}
+
+.about{
+grid-template-columns:1fr;
+text-align:center;
+}
+
+.founder-img{
+margin:auto;
+}
+
+section{
+padding:48px 5%;
+}
+
+}
 </style>
-
 </head>
-
 
 <body>
 
-
-<!-- =========================
-     FLOATING BUBBLES
-========================= -->
-
-<div
-class="bubble"
-style="
-left:10%;
-width:70px;
-height:70px;
-animation-duration:13s;
-">
-</div>
-
-<div
-class="bubble"
-style="
-left:80%;
-width:120px;
-height:120px;
-animation-duration:17s;
-">
-</div>
-
-<div
-class="bubble"
-style="
-left:45%;
-width:90px;
-height:90px;
-animation-duration:20s;
-">
-</div>
-
-
-<!-- =========================
-     HEADER
-========================= -->
+<!-- HEADER -->
 
 <header>
 
-    <div class="logo-wrap">
+<div class="logo">
+<img src="tdt-logo.png" alt="TDT Logo"
+onerror="this.style.display='none'">
+<div>TDT <span>ONE</span></div>
+</div>
 
-        <!-- YOUR LOGO -->
-        <img
-        class="logo-img"
-        src="logo.png"
-        alt="Thillai Data Tech Logo">
-
-        <div class="logo">
-
-            <h2>
-                Thillai Data Tech
-            </h2>
-
-        </div>
-
-    </div>
-
-
-    <nav>
-
-        <a href="#services">
-            Services
-        </a>
-
-        <a href="#about">
-            About
-        </a>
-
-        <a href="#contact">
-            Contact
-        </a>
-
-    </nav>
+<nav>
+<a href="#home">Home</a>
+<a href="#about">About</a>
+<a href="#founder">Founder</a>
+<a href="#hub">TDT Hub</a>
+<a href="#services">Services</a>
+<a href="#pricing">Pricing</a>
+<a href="#internships">Internships</a>
+<a href="#classes">Classes</a>
+<a href="#contact">Contact</a>
+</nav>
 
 </header>
 
 
-<!-- =========================
-     HERO
-========================= -->
+<!-- HOME -->
 
-<section class="hero">
+<div class="hero" id="home">
 
-    <div class="hero-content">
+<h1>Everything Digital. One Platform.</h1>
 
+<p>
+Welcome to TDT ONE – Your digital destination for applications,
+technology services, business solutions and learning opportunities.
+</p>
 
-        <div class="hero-text">
+<a href="#hub" class="btn">Explore TDT Hub</a>
 
-            <h1>
+<a href="#services" class="btn green">Our Services</a>
 
-                Grow Your Business with
+</div>
 
-                <span>
-                    Thillai Data Tech
-                </span>
 
-            </h1>
-
-
-            <p>
-
-                Professional Data Analytics •
-                Website Development •
-                Mobile Apps •
-                AI Projects •
-                Graphic Design •
-                Digital Solutions
-
-            </p>
-
-
-            <a
-            href="#contact"
-            class="btn book">
-
-                📅 Book Service
-
-            </a>
-
-
-            <a
-            href="tel:+918903763714"
-            class="btn call">
-
-                📞 Call Now
-
-            </a>
-
-
-            <a
-            href="https://maadheshb.github.io/services-amount/"
-            class="btn fees">
-
-                💰 Services
-
-            </a>
-
-        </div>
-
-
-        <!-- =========================
-             FOUNDER
-        ========================= -->
-
-        <div class="founder-box">
-
-            <img
-            class="founder-photo"
-            src="founder.png"
-            alt="Founder">
-
-            <div class="founder-name">
-
-                Founder
-
-            </div>
-
-            <div class="founder-role">
-
-                Thillai Data Tech
-
-            </div>
-
-        </div>
-
-
-    </div>
-
-</section>
-
-
-
-<!-- =========================
-     SERVICES
-========================= -->
-
-<section id="services">
-
-    <h2 class="title">
-
-        ✨ Our Premium Services
-
-    </h2>
-
-
-    <div class="cards">
-
-
-        <div class="card">
-
-            <div class="icon">
-                📊
-            </div>
-
-            <h3>
-                Data Analytics
-            </h3>
-
-            <p>
-
-                Power BI, Excel, SQL,
-                Python, Tableau Dashboards
-                and Business Reports.
-
-            </p>
-
-        </div>
-
-
-
-        <div class="card">
-
-            <div class="icon">
-                💻
-            </div>
-
-            <h3>
-                Website Development
-            </h3>
-
-            <p>
-
-                Business, Portfolio,
-                Restaurant and
-                E-Commerce Websites.
-
-            </p>
-
-        </div>
-
-
-
-        <div class="card">
-
-            <div class="icon">
-                📱
-            </div>
-
-            <h3>
-                Mobile App Development
-            </h3>
-
-            <p>
-
-                Android Apps using
-                Java, Kotlin and Firebase.
-
-            </p>
-
-        </div>
-
-
-
-        <div class="card">
-
-            <div class="icon">
-                🤖
-            </div>
-
-            <h3>
-                AI & Machine Learning
-            </h3>
-
-            <p>
-
-                AI Dashboards,
-                Chatbots, Automation
-                and College Projects.
-
-            </p>
-
-        </div>
-
-
-
-        <div class="card">
-
-            <div class="icon">
-                🎨
-            </div>
-
-            <h3>
-                Graphic Design
-            </h3>
-
-            <p>
-
-                Logo, Posters, Flyers,
-                Banners and Instagram
-                Branding.
-
-            </p>
-
-        </div>
-
-
-
-        <div class="card">
-
-            <div class="icon">
-                ☁️
-            </div>
-
-            <h3>
-                Cloud & Database
-            </h3>
-
-            <p>
-
-                Firebase, MySQL,
-                MongoDB and Cloud Hosting.
-
-            </p>
-
-        </div>
-
-
-    </div>
-
-</section>
-
-
-
-<!-- =========================
-     ABOUT
-========================= -->
+<!-- ABOUT -->
 
 <section id="about">
 
-    <h2 class="title">
+<h2 class="heading">
+About <span>Thillai Data Tech</span>
+</h2>
 
-        🚀 Why Choose
-        Thillai Data Tech?
+<div class="about">
 
-    </h2>
+<div>
+<h2>Welcome to TDT ONE</h2>
 
+<p>
+Thillai Data Tech is a technology-focused platform providing
+digital services, application solutions, business support
+and learning opportunities.
+</p>
 
-    <div class="cards">
+<p>
+Our goal is to help individuals and businesses explore
+technology through accessible digital solutions.
+</p>
+</div>
 
+<div class="card">
 
-        <div class="card">
+<h3>Our Vision</h3>
 
-            <div class="icon">
-                🎯
-            </div>
+<p>
+To create accessible and useful digital solutions
+for businesses and individuals.
+</p>
 
-            <h3>
-                Modern Design
-            </h3>
+<br>
 
-            <p>
+<h3>Our Mission</h3>
 
-                Creative UI/UX with
-                colorful animations
-                and responsive layouts.
+<p>
+To provide innovative services, useful applications
+and technology-based learning opportunities.
+</p>
 
-            </p>
+</div>
 
-        </div>
-
-
-
-        <div class="card">
-
-            <div class="icon">
-                ⚡
-            </div>
-
-            <h3>
-                Fast Delivery
-            </h3>
-
-            <p>
-
-                Quality work delivered
-                on time for students,
-                startups and businesses.
-
-            </p>
-
-        </div>
+</div>
+</section>
 
 
+<!-- FOUNDER -->
 
-        <div class="card">
+<section id="founder" style="background:#f0ecfa">
 
-            <div class="icon">
-                💎
-            </div>
+<h2 class="heading">
+Meet Our <span>Founder</span>
+</h2>
 
-            <h3>
-                Affordable Pricing
-            </h3>
+<div class="about">
 
-            <p>
+<div style="text-align:center">
 
-                Professional digital
-                solutions at
-                budget-friendly prices.
+<img src="founder.jpg"
+class="founder-img"
+alt="Founder Photo">
 
-            </p>
+</div>
 
-        </div>
+<div>
+
+<h2>Maadhesh B.</h2>
+
+<h3 style="color:#7139c5;margin:10px 0">
+Founder – Thillai Data Tech
+</h3>
+
+<p>
+Welcome to TDT ONE. Our vision is to make digital services,
+technology solutions and learning opportunities accessible
+through one platform.
+</p>
+
+<p>
+We believe in innovation, creativity and continuous learning.
+</p>
+
+</div>
+</div>
+</section>
 
 
-    </div>
+<!-- TDT HUB -->
+
+<section id="hub">
+
+<h2 class="heading">
+TDT <span>Hub</span>
+</h2>
+
+<p style="text-align:center;margin-bottom:30px">
+Discover and download applications developed by TDT.
+</p>
+
+<div class="cards">
+
+<!-- APPLICATION 1 -->
+
+<div class="card hub-card">
+
+<div class="app-icon">T</div>
+
+<h3>TDT One</h3>
+
+<p>
+Explore the digital ecosystem of Thillai Data Tech.
+</p>
+
+<span class="tag">Available Soon</span>
+
+<p>Version: 1.0</p>
+
+<a href="apps/tdt-one.apk"
+download
+class="btn green">
+Download APK
+</a>
+
+</div>
+
+
+<!-- APPLICATION 2 -->
+
+<div class="card hub-card">
+
+<div class="app-icon">H</div>
+
+<h3>TDT Hub</h3>
+
+<p>
+Explore applications and digital tools.
+</p>
+
+<span class="tag">Coming Soon</span>
+
+</div>
+
+
+<!-- UPCOMING APPLICATION -->
+
+<div class="card hub-card">
+
+<div class="app-icon">+</div>
+
+<h3>Upcoming Applications</h3>
+
+<p>
+Discover applications coming soon to TDT Hub.
+</p>
+
+<span class="tag">Coming Soon</span>
+
+</div>
+
+</div>
+</section>
+
+
+<!-- SERVICES -->
+
+<section id="services" style="background:#f0ecfa">
+
+<h2 class="heading">
+Our <span>Services</span>
+</h2>
+
+<div class="cards">
+
+<div class="card">
+<h3>Website Development</h3>
+<p>
+Responsive business websites, landing pages,
+website creation and design.
+</p>
+</div>
+
+<div class="card">
+<h3>Data Analytics</h3>
+<p>
+Data cleaning, analysis, Excel reports
+and Power BI dashboards.
+</p>
+</div>
+
+<div class="card">
+<h3>Business Solutions</h3>
+<p>
+Digital support and technology solutions
+for businesses.
+</p>
+</div>
+
+<div class="card">
+<h3>Branding & Design</h3>
+<p>
+Creative branding, promotional designs
+and visual identity.
+</p>
+</div>
+
+<div class="card">
+<h3>Business Development</h3>
+<p>
+Digital growth support and business
+development services.
+</p>
+</div>
+
+<div class="card">
+<h3>Support Services</h3>
+<p>
+Technical assistance and digital
+service support.
+</p>
+</div>
+
+</div>
+</section>
+
+
+<!-- PRICING -->
+
+<section id="pricing">
+
+<h2 class="heading">
+Service <span>Pricing</span>
+</h2>
+
+<p style="text-align:center;margin-bottom:30px;color:#666">
+Sample starting prices. Final pricing depends on requirements.
+</p>
+
+<div class="cards">
+
+<div class="card">
+<h3>Basic Website</h3>
+<p>Simple responsive website.</p>
+<div class="price">₹1,999+</div>
+<a class="btn green" href="#contact">Get Quote</a>
+</div>
+
+<div class="card">
+<h3>Business Website</h3>
+<p>Professional multi-section business website.</p>
+<div class="price">₹4,999+</div>
+<a class="btn green" href="#contact">Get Quote</a>
+</div>
+
+<div class="card">
+<h3>Data Analytics</h3>
+<p>Excel data cleaning and basic analysis.</p>
+<div class="price">₹999+</div>
+<a class="btn green" href="#contact">Get Quote</a>
+</div>
+
+<div class="card">
+<h3>Power BI Dashboard</h3>
+<p>Interactive business dashboard.</p>
+<div class="price">₹1,499+</div>
+<a class="btn green" href="#contact">Get Quote</a>
+</div>
+
+<div class="card">
+<h3>Branding & Design</h3>
+<p>Basic logo and creative design services.</p>
+<div class="price">₹499+</div>
+<a class="btn green" href="#contact">Get Quote</a>
+</div>
+
+<div class="card">
+<h3>Custom Solutions</h3>
+<p>Customized solutions based on requirements.</p>
+<div class="price">Contact Us</div>
+<a class="btn green" href="#contact">Get Quote</a>
+</div>
+
+</div>
+</section>
+
+
+<!-- INTERNSHIPS -->
+
+<section id="internships" style="background:#f0ecfa">
+
+<h2 class="heading">
+Internship <span>Opportunities</span>
+</h2>
+
+<div class="cards">
+
+<div class="card">
+
+<h3>Virtual Internship</h3>
+
+<p>
+Explore available internship opportunities,
+eligibility, duration and certificate details.
+</p>
+
+<a href="#contact" class="btn green">Apply Now</a>
+
+</div>
+
+<div class="card">
+
+<h3>Training Programs</h3>
+
+<p>
+Learn practical skills through technology-based
+training programs.
+</p>
+
+<a href="#contact" class="btn green">Enquire Now</a>
+
+</div>
+
+</div>
+</section>
+
+
+<!-- VIRTUAL CLASSES -->
+
+<section id="classes">
+
+<h2 class="heading">
+Virtual <span>Classes</span>
+</h2>
+
+<div class="cards">
+
+<div class="card">
+
+<h3>Technology Courses</h3>
+
+<p>
+Explore programming and technology
+learning opportunities.
+</p>
+
+<a href="#contact" class="btn green">Register</a>
+
+</div>
+
+<div class="card">
+
+<h3>Data Analytics Courses</h3>
+
+<p>
+Learn Excel, Python, SQL and data visualization.
+</p>
+
+<a href="#contact" class="btn green">Register</a>
+
+</div>
+
+</div>
+</section>
+
+
+<!-- BUSINESS SOLUTIONS -->
+
+<section style="background:#f0ecfa">
+
+<h2 class="heading">
+Business <span>Solutions</span>
+</h2>
+
+<div class="cards">
+
+<div class="card">
+<h3>Digital Transformation</h3>
+<p>
+Technology-based solutions to improve
+business operations.
+</p>
+</div>
+
+<div class="card">
+<h3>Business Reporting</h3>
+<p>
+Data reports and dashboards
+for business insights.
+</p>
+</div>
+
+<div class="card">
+<h3>Digital Presence</h3>
+<p>
+Website and digital branding
+support for businesses.
+</p>
+</div>
+
+</div>
+</section>
+
+
+<!-- CONTACT US -->
+
+<section id="contact" class="contact">
+
+<h2 class="heading">
+Contact <span>Us</span>
+</h2>
+
+<div class="contact-info">
+
+<p>
+Connect with Thillai Data Tech through
+your favourite platform.
+</p>
+
+</div>
+
+<div class="cards">
+
+<!-- WHATSAPP -->
+
+<div class="card hub-card">
+
+<div class="app-icon">W</div>
+
+<h3>WhatsApp</h3>
+
+<p>
+Contact us directly through WhatsApp.
+</p>
+
+<a href="https://wa.me/918903763714"
+target="_blank"
+rel="noopener"
+class="btn green">
+
+Open WhatsApp
+
+</a>
+
+</div>
+
+
+<!-- INSTAGRAM -->
+
+<div class="card hub-card">
+
+<div class="app-icon">I</div>
+
+<h3>Instagram</h3>
+
+<p>
+Follow Thillai Data Tech on Instagram.
+</p>
+
+<a href="https://www.instagram.com/thillai_data_tech/"
+target="_blank"
+rel="noopener"
+class="btn green">
+
+Open Instagram
+
+</a>
+
+</div>
+
+
+<!-- EMAIL -->
+
+<div class="card hub-card">
+
+<div class="app-icon">@</div>
+
+<h3>Email</h3>
+
+<p>
+Send your enquiry directly to our official email.
+</p>
+
+<a href="mailto:thillaidatatech@gmail.com"
+class="btn green">
+
+Send Email
+
+</a>
+
+</div>
+
+</div>
 
 </section>
 
 
-
-<!-- =========================
-     CONTACT
-========================= -->
-
-<section id="contact">
-
-    <div class="contact">
-
-
-        <h2 class="title">
-
-            📞 Contact
-            Thillai Data Tech
-
-        </h2>
-
-
-        <p>
-
-            <strong>
-                📱 Phone:
-            </strong>
-
-            +91 8903763714
-
-        </p>
-
-
-        <p>
-
-            <strong>
-                📷 Instagram:
-            </strong>
-
-            @thillai_data_tech
-
-        </p>
-
-
-        <p>
-
-            <strong>
-                📧 Email:
-            </strong>
-
-            thillaidatatech@gmail.com
-
-        </p>
-
-
-
-        <a
-        href="https://wa.me/918903763714"
-        class="btn book">
-
-            💬 WhatsApp Booking
-
-        </a>
-
-
-        <a
-        href="https://instagram.com/thillai_data_tech"
-        class="btn fees">
-
-            📷 Instagram
-
-        </a>
-
-
-    </div>
-
-</section>
-
-
-
-<!-- =========================
-     FOOTER
-========================= -->
+<!-- FOOTER -->
 
 <footer>
 
-    ❤️ Designed by
-    <strong>
-        Thillai Data Tech
-    </strong>
+<div class="logo">
 
-    <br>
+<img src="tdt-logo.png"
+alt="TDT Logo"
+onerror="this.style.display='none'">
 
-    Data • Design • Development • AI
+<div>
+TDT <span style="color:#9c79eb">ONE</span>
+</div>
+
+</div>
+
+<p>By Thillai Data Tech</p>
+
+<p>Everything Digital. One Platform.</p>
+
+<p>
+<a href="#home">Home</a> |
+<a href="#services">Services</a> |
+<a href="#hub">TDT Hub</a> |
+<a href="#contact">Contact</a>
+</p>
+
+<p>
+© 2026 Thillai Data Tech. All Rights Reserved.
+</p>
 
 </footer>
 
 
-</body>
+<script>
 
+// CONTACT DETAILS
+
+const WHATSAPP_NUMBER = "918903763714";
+const INSTAGRAM_ID = "thillai_data_tech";
+const EMAIL_ID = "thillaidatatech@gmail.com";
+
+// Email enquiry helper
+
+function sendEnquiry(service){
+
+const subject = encodeURIComponent(
+"TDT ONE Enquiry - " + service
+);
+
+const body = encodeURIComponent(
+"Hello Thillai Data Tech,\n\n" +
+"I am interested in: " + service +
+"\n\nPlease share more details."
+);
+
+window.location.href =
+"mailto:" + EMAIL_ID +
+"?subject=" + subject +
+"&body=" + body;
+
+}
+
+</script>
+
+</body>
 </html>
+```
